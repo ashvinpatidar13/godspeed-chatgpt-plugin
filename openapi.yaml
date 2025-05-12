@@ -1,0 +1,33 @@
+
+openapi: 3.0.1
+info:
+  title: ChatGPT OpenAI Proxy Plugin
+  description: A plugin that sends user queries to OpenAI's API and returns answers.
+  version: "1.0.0"
+servers:
+  - url: http://localhost:3333
+paths:
+  /search:
+    post:
+      operationId: search
+      summary: Send a query to OpenAI API
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                query:
+                  type: string
+                  description: The user query to send to OpenAI
+      responses:
+        "200":
+          description: A successful response from OpenAI
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer:
+                    type: string

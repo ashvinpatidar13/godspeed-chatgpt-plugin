@@ -1,1 +1,1 @@
-# godspeed-chatgpt-plugin
+### plugin
